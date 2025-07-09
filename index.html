@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AURA - Music Platform</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <div class="logo-container">
+            <a href="#" class="logo">AURA</a>
+            <span class="tagline">Donde El Talento Conoce La Oportunidad</span>
+        </div>
+        <nav class="navigation">
+            <a href="#events" class="nav-link" data-text="Eventos">Eventos</a>
+            <a href="#influencers" class="nav-link" data-text="Influencers">Influencers</a>
+            <a href="#booking" class="nav-link" data-text="Artistas">Artistas</a>
+            <a href="#launches" class="nav-link" data-text="Lanzamientos">Lanzamientos</a>
+            <a href="#images" class="nav-link" data-text="Imagenes">Imagenes</a>
+        </nav>
+        <button class="btn-primary">Únete a nosotros</button>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero section" id="hero">
+            <div id="particle-container"></div>
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1 class="hero-title">
+                        <span class="title-line title-light">Realiza</span>
+                        <span class="title-line accent">Shows En Vivo.</span>
+                    </h1>
+                    <p class="hero-description">
+                        Conectamos los mejores talentos con promotores y marcas que buscan experiencias inolvidables.
+                    </p>
+                    <div class="hero-actions">
+                        <button class="btn-primary large">Contrata Un Show</button>
+                        
+                    </div>
+                </div>
+                <div class="hero-visual">
+                    <div class="artist-particle-container"></div>
+                </div>
+
+            </div>
+        </div>
+        <!-- <div class="events-actions">
+            <button class="btn-primary">Create Event</button>
+            <button class="btn-secondary">Browse All Events</button>
+        </div> -->
+    </section>
+
+    <!-- Influencers Section -->
+    <section id="influencers" class="section influencers-section">
+        <div class="section-header">
+            <h3 class="section-title">Influencers</h3>
+            <p class="section-subtitle">Connect with music tastemakers</p>
+        </div>
+        <div class="influence-grid">
+            <div class="influencer-card">
+                <div class="influencer-avatar">
+                    <div class="avatar-placeholder">MK</div>
+                    <div class="influence-ring"></div>
+                </div>
+                <div class="influencer-info">
+                    <h4>Maya Kim</h4>
+                    <p>Electronic & Ambient</p>
+                    <div class="influence-stats">
+                        <div class="stat">
+                            <span class="stat-number">125K</span>
+                            <span class="stat-label">Reach</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">8.5%</span>
+                            <span class="stat-label">Engagement</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="influencer-card">
+                <div class="influencer-avatar">
+                    <div class="avatar-placeholder">JR</div>
+                    <div class="influence-ring"></div>
+                </div>
+                <div class="influencer-info">
+                    <h4>Jake Rivers</h4>
+                    <p>Indie & Alternative</p>
+                    <div class="influence-stats">
+                        <div class="stat">
+                            <span class="stat-number">89K</span>
+                            <span class="stat-label">Reach</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">12.3%</span>
+                            <span class="stat-label">Engagement</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="influencer-card">
+                <div class="influencer-avatar">
+                    <div class="avatar-placeholder">SC</div>
+                    <div class="influence-ring"></div>
+                </div>
+                <div class="influencer-info">
+                    <h4>Sofia Chen</h4>
+                    <p>Hip-Hop & R&B</p>
+                    <div class="influence-stats">
+                        <div class="stat">
+                            <span class="stat-number">203K</span>
+                            <span class="stat-label">Reach</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">6.8%</span>
+                            <span class="stat-label">Engagement</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="influencers-actions">
+            <button class="btn-primary">Find Collaborators</button>
+            <button class="btn-secondary">Join as Influencer</button>
+        </div>
+    </section>
+
+    <!-- Artist Booking Section -->
+    <section id="booking" class="section booking-section">
+        <div class="section-header">
+            <h3 class="section-title">Artist Booking</h3>
+            <p class="section-subtitle">Book gigs and manage your performance calendar</p>
+        </div>
+        <div class="booking-dashboard">
+            <div class="booking-card">
+                <div class="booking-icon">🎤</div>
+                <h4>Venue Matching</h4>
+                <p>AI-powered venue recommendations based on your style and audience</p>
+                <button class="btn-secondary">Find Venues</button>
+            </div>
+            <div class="booking-card">
+                <div class="booking-icon">📅</div>
+                <h4>Schedule Management</h4>
+                <p>Coordinate tour dates, rehearsals, and promotional events</p>
+                <button class="btn-secondary">Manage Calendar</button>
+            </div>
+            <div class="booking-card">
+                <div class="booking-icon">💰</div>
+                <h4>Dynamic Pricing</h4>
+                <p>Smart pricing based on demand, venue capacity, and your performance history</p>
+                <button class="btn-secondary">Set Rates</button>
+            </div>
+            <div class="booking-card">
+                <div class="booking-icon">📋</div>
+                <h4>Contract Builder</h4>
+                <p>Generate professional contracts with integrated e-signature</p>
+                <button class="btn-secondary">Create Contract</button>
+            </div>
+        </div>
+        <div class="booking-actions">
+            <button class="btn-primary">Start Booking</button>
+        </div>
+    </section>
+
+    <!-- Launches Section -->
+    <section id="launches" class="section launches-section">
+        <div class="section-header">
+            <h3 class="section-title">Launches</h3>
+            <p class="section-subtitle">Release your music to the world</p>
+        </div>
+        <div class="launch-timeline">
+            <div class="timeline-item">
+                <div class="timeline-marker active"></div>
+                <div class="timeline-content">
+                    <h4>Pre-Production</h4>
+                    <p>Plan your release strategy and build anticipation</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-marker active"></div>
+                <div class="timeline-content">
+                    <h4>Distribution Setup</h4>
+                    <p>Configure streaming platforms and digital stores</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-marker current"></div>
+                <div class="timeline-content">
+                    <h4>Promotional Campaign</h4>
+                    <p>Launch marketing campaigns and engage influencers</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-marker"></div>
+                <div class="timeline-content">
+                    <h4>Release Day</h4>
+                    <p>Go live across all platforms simultaneously</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-marker"></div>
+                <div class="timeline-content">
+                    <h4>Post-Launch Analytics</h4>
+                    <p>Track performance and plan next steps</p>
+                </div>
+            </div>
+        </div>
+        <div class="launch-actions">
+            <button class="btn-primary">Plan Release</button>
+            <button class="btn-secondary">View Analytics</button>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <h3>AURA</h3>
+                <p>Empowering artists, connecting audiences</p>
+            </div>
+            <div class="footer-links">
+                <div class="link-group">
+                    <h4>Platform</h4>
+                    <a href="#events">Events</a>
+                    <a href="#influencers">Influencers</a>
+                    <a href="#booking">Booking</a>
+                    <a href="#launches">Launches</a>
+                </div>
+                <div class="link-group">
+                    <h4>Support</h4>
+                    <a href="#">Help Center</a>
+                    <a href="#">Contact</a>
+                    <a href="#">Community</a>
+                </div>
+                <div class="link-group">
+                    <h4>Company</h4>
+                    <a href="#">About</a>
+                    <a href="#">Careers</a>
+                    <a href="#">Press</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 AURA. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
