@@ -1,6 +1,11 @@
 /* AURA - Custom Stylesheet */
 /* Following PersonaForge Anti-Generic Framework */
 
+html, body {
+  width: 100%;
+  overflow-x: hidden;
+}
+
 :root {
   /* Color System (User-defined) */
   --primary-hue: 231;
@@ -41,6 +46,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 400; /* Regular weight for mono font */
+  margin: 0; /* Remove default browser margin */
 }
 
 /* Header & Navigation - Elegant Style */
@@ -48,6 +54,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: var(--space-md); /* Add gap between header elements */
   padding: 0 32px;
   height: 80px;
   background-color: rgba(13, 13, 13, 0.8);
@@ -66,7 +73,7 @@ body {
 
 .logo {
   font-family: var(--font-heading);
-  font-size: var(--text-xxl);
+  font-size: 2.5rem; /* Increased header logo size */
   font-weight: 700;
   color: var(--color-text);
   text-decoration: none;
@@ -148,11 +155,12 @@ body {
   transition: all 0.3s ease;
   font-size: 1rem;
   letter-spacing: 0.5px;
+  text-decoration: none; /* Remove underline from link-buttons */
 }
 
 .btn-primary {
   background-color: var(--color-accent);
-  color: var(--color-accent-contrast);
+  color: #000000; /* As per user request */
   border: 2px solid transparent;
   box-shadow: 0 8px 25px -5px hsla(217, 100%, 78%, 0.4);
 }
@@ -188,9 +196,15 @@ body {
 }
 
 .btn-primary.large {
-  padding: 24px 50px;
-  font-size: 1.4rem;
-  min-width: 240px;
+  padding: 18px 36px;
+  font-size: 1.1rem;
+}
+
+/* Adjust Desktop CTA button height */
+.desktop-cta {
+    padding-top: 8px;
+    padding-bottom: 8px;
+    line-height: 1.2;
 }
 
 .btn-secondary.small {
@@ -203,7 +217,7 @@ body {
 
 /* Hero Section - Centered Elegant Layout */
 .hero {
-  min-height: 80vh;
+  min-height: 70vh; /* Reduced min-height to move content up */
   display: flex;
   align-items: center;
   padding: 0 var(--space-xl);
@@ -241,7 +255,7 @@ body {
 
 .hero-title {
   font-family: var(--font-heading);
-  font-size: clamp(3.5rem, 7vw, 6rem); /* Slightly larger for more impact */
+  font-size: clamp(4rem, 8vw, 7rem); /* Increased hero title size */
   font-weight: 700;
   line-height: 1.1;
   letter-spacing: -0.02em;
@@ -258,7 +272,7 @@ body {
 }
 
 .title-line.subtitle {
-  font-size: clamp(1rem, 1.5vw, 1.5rem);
+  font-size: clamp(1.2rem, 2vw, 1.8rem); /* Increased hero subtitle size */
   font-weight: 400;
   margin-top: var(--space-md);
   color: #B0B0B0;
@@ -273,6 +287,18 @@ body {
   justify-content: space-evenly;
   flex-wrap: wrap;
   margin-top: var(--space-xl);
+}
+
+.cta-main {
+    order: 2;
+}
+
+.cta-secondary-1 {
+    order: 1;
+}
+
+.cta-secondary-2 {
+    order: 3;
 }
 
 .hero-visual {
@@ -672,6 +698,7 @@ body {
 }
 
 /* Responsive Design */
+
 @media (max-width: 768px) {
   .nav-container {
     flex-direction: column;
@@ -727,4 +754,223 @@ body {
 .section-reveal.visible {
   opacity: 1;
   transform: translateY(0);
+}
+
+/* Mobile Menu Styles */
+
+/* Hide mobile elements on desktop by default */
+.mobile-header-controls,
+.mobile-sidebar,
+.sidebar-overlay {
+    display: none; /* Hide on desktop by default */
+}
+
+/* Styles for mobile view */
+@media (max-width: 768px) {
+    /* Hide the header tagline on mobile */
+    .header .tagline {
+        display: none;
+    }
+
+    .header {
+        padding: 0 var(--space-md); /* Adjust padding for mobile */
+    }
+
+    .hero {
+        padding-left: var(--space-md);
+        padding-right: var(--space-md);
+    }
+
+    /* Make hero buttons smaller on mobile */
+    .hero-actions {
+        flex-direction: column;
+        gap: var(--space-lg);
+    }
+
+    .hero-actions .btn {
+        order: initial; /* Reset order to follow HTML source */
+        font-size: 0.875rem; 
+        padding: var(--space-sm) var(--space-md); 
+        min-width: auto; 
+    }
+
+    /* Adjust influencer grid for mobile to prevent overflow */
+    .influence-grid {
+        grid-template-columns: 1fr; /* Switch to a single column layout */
+    }
+
+    /* Stack influencer action buttons on mobile */
+    .influencers-actions {
+        flex-direction: column;
+        gap: var(--space-md);
+    }
+
+    /* Ensure section headers are centered on mobile */
+    .section-header {
+        text-align: center;
+    }
+
+        /* Adjust padding for all sections on mobile to ensure proper centering */
+    .section {
+        padding: var(--space-xl) var(--space-md); /* Reduce side padding */
+    }
+
+    /* Adjust booking section for mobile */
+    .booking-dashboard {
+        display: flex; /* Deactivate grid and use flexbox for centering */
+        flex-direction: column; /* Stack cards vertically */
+        align-items: center; /* Center cards horizontally */
+        gap: var(--space-lg); /* Add space between cards */
+    }
+
+    .booking-actions {
+        flex-direction: column;
+        align-items: center; /* Center buttons horizontally */
+        gap: var(--space-md);
+    }
+
+    .booking-card {
+        width: 90%;
+        max-width: 400px;
+        box-sizing: border-box;
+        padding: var(--space-xl);
+        /* Use flexbox for robust centering of all content */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: var(--space-md); /* Add some space between card elements */
+    }
+
+    /* Stack launch action buttons on mobile */
+    .launch-actions {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    /* Hide desktop navigation and CTA button */
+    .navigation.desktop-nav,
+    .btn-primary.desktop-cta {
+        display: none;
+    }
+
+    /* Show and style mobile controls container */
+    .mobile-header-controls {
+        display: flex;
+        align-items: center;
+        gap: var(--space-md);
+    }
+
+    /* Style the new mobile CTA button */
+    .mobile-cta {
+        padding: 8px 16px;
+        font-size: 0.8rem;
+        display: block; /* Ensure it's visible */
+        text-decoration: none; /* Remove underline from link */
+        color: #000000; /* Set font color to black */
+    }
+
+    /* Display and style the hamburger menu button */
+    .mobile-menu-toggle {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        width: 30px;
+        height: 25px;
+        background: transparent;
+        border: none;
+        cursor: pointer;
+        padding: 0;
+        z-index: 2001; /* High z-index to be on top */
+    }
+
+    .hamburger-line {
+        width: 30px;
+        height: 3px;
+        background-color: var(--color-text);
+        border-radius: 10px;
+        transition: all 0.3s ease-in-out;
+    }
+
+    /* Style the sidebar menu */
+    .mobile-sidebar {
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        top: 0;
+        right: -100%; /* Start off-screen */
+        width: 280px;
+        max-width: 80%;
+        height: 100%;
+        background-color: #0a0a0a;
+        z-index: 2000;
+        transition: right 0.35s ease-in-out;
+        padding: var(--space-lg);
+        border-left: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .mobile-sidebar.active {
+        right: 0;
+    }
+
+    .sidebar-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: var(--space-xl);
+    }
+
+    .sidebar-close {
+        font-size: 2.5rem;
+        color: var(--color-text);
+        background: none;
+        border: none;
+        cursor: pointer;
+    }
+
+    .sidebar-nav {
+        display: flex;
+        flex-direction: column;
+        gap: var(--space-md);
+    }
+
+    .sidebar-link {
+        color: var(--color-text-muted);
+        text-decoration: none;
+        font-size: 1.2rem;
+        padding: var(--space-sm) 0;
+        transition: color 0.3s ease;
+    }
+
+    .sidebar-link:hover {
+        color: var(--color-accent);
+    }
+
+    .sidebar-link.btn-primary {
+        margin-top: var(--space-lg);
+        text-align: center;
+        padding: 14px 28px;
+        background-color: var(--color-accent);
+        color: #000; /* Black text for contrast */
+    }
+
+    /* Style the overlay */
+    .sidebar-overlay {
+        display: block;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.7);
+        z-index: 1999;
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.35s ease-in-out, visibility 0.35s ease-in-out;
+    }
+
+    .sidebar-overlay.active {
+        opacity: 1;
+        visibility: visible;
+    }
+
 }

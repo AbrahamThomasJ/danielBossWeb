@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', function() {
     initializeScrollEffects();
     initializeInteractiveElements();
     initializeParticles();
+    initializeMobileMenu(); // Initialize mobile menu functionality
 });
 
 // Navigation with smooth scrolling and active states
@@ -160,5 +161,29 @@ function initializeParticles() {
         particle.style.animation = `float ${animationDuration}s ${animationDelay}s linear infinite`;
 
         container.appendChild(particle);
+    }
+}
+
+// Mobile Menu Functionality
+function initializeMobileMenu() {
+    const menuToggle = document.querySelector('.mobile-menu-toggle');
+    const sidebar = document.querySelector('.mobile-sidebar');
+    const closeButton = document.querySelector('.sidebar-close');
+    const overlay = document.querySelector('.sidebar-overlay');
+
+    if (menuToggle && sidebar && closeButton && overlay) {
+        const openMenu = () => {
+            sidebar.classList.add('active');
+            overlay.classList.add('active');
+        };
+
+        const closeMenu = () => {
+            sidebar.classList.remove('active');
+            overlay.classList.remove('active');
+        };
+
+        menuToggle.addEventListener('click', openMenu);
+        closeButton.addEventListener('click', closeMenu);
+        overlay.addEventListener('click', closeMenu);
     }
 }

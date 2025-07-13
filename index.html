@@ -13,17 +13,47 @@
     <header class="header">
         <div class="logo-container">
             <a href="#" class="logo">AURA</a>
-            <span class="tagline">Donde El Talento Conoce La Oportunidad</span>
         </div>
-        <nav class="navigation">
+
+        <!-- Desktop Navigation -->
+        <nav class="navigation desktop-nav">
             <a href="#events" class="nav-link" data-text="Eventos">Eventos</a>
             <a href="#influencers" class="nav-link" data-text="Influencers">Influencers</a>
-            <a href="#booking" class="nav-link" data-text="Artistas">Artistas</a>
-            <a href="#launches" class="nav-link" data-text="Lanzamientos">Lanzamientos</a>
-            <a href="#images" class="nav-link" data-text="Imagenes">Imagenes</a>
+            <a href="#artists" class="nav-link" data-text="Artistas">Artistas</a>
+            <a href="#releases" class="nav-link" data-text="Lanzamientos">Lanzamientos</a>
+            <a href="#gallery" class="nav-link" data-text="Imágenes">Imágenes</a>
         </nav>
-        <button class="btn-primary">Únete a nosotros</button>
+
+        <!-- Desktop CTA -->
+        <a href="#contact" class="btn-primary desktop-cta">Únetenos</a>
+
+        <!-- Mobile Header Controls -->
+        <div class="mobile-header-controls">
+            <a href="#contact" class="btn-primary mobile-cta">Únetenos</a>
+            <button class="mobile-menu-toggle" aria-label="Open menu">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
+        </div>
     </header>
+
+    <!-- Mobile Sidebar -->
+    <div class="sidebar-overlay"></div>
+    <aside class="mobile-sidebar">
+        <div class="sidebar-header">
+            <a href="#" class="logo">AURA</a>
+            <button class="sidebar-close" aria-label="Close menu">&times;</button>
+        </div>
+        <nav class="sidebar-nav">
+            <a href="#events" class="sidebar-link">Eventos</a>
+            <a href="#influencers" class="sidebar-link">Influencers</a>
+            <a href="#artists" class="sidebar-link">Artistas</a>
+            <a href="#releases" class="sidebar-link">Lanzamientos</a>
+            <a href="#gallery" class="sidebar-link">Imágenes</a>
+            <a href="#contact" class="sidebar-link btn-primary">Únetenos</a>
+        </nav>
+    </aside>
 
     <main>
         <!-- Hero Section -->
@@ -36,9 +66,9 @@
                         <span class="title-line subtitle">DONDE EL TALENTO CONOCE LA OPORTUNIDAD</span>
                     </h1>
                     <div class="hero-actions">
-                        <button class="btn btn-secondary">Promociona tu musica</button>
-                        <button class="btn btn-primary large">Contrata un show</button>
-                        <button class="btn btn-secondary">Promociona tu evento</button>
+                        <button class="btn btn-primary large cta-main">Contrata un show</button>
+                        <button class="btn btn-secondary cta-secondary-1">Promociona tu musica</button>
+                        <button class="btn btn-secondary cta-secondary-2">Promociona tu evento</button>
                     </div>
                 </div>
             </div>
