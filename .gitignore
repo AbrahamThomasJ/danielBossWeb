@@ -1,2 +1,5 @@
 # Ignore Windsurf directory
 .windsurf/
+
+# Ignore text files
+*.txt

@@ -147,6 +147,7 @@ body {
 }
 
 /* Buttons - Elegant Style */
+/* Buttons - Elegant Style */
 .btn-primary, .btn-secondary {
   padding: 14px 28px;
   border-radius: 50px;
@@ -156,6 +157,7 @@ body {
   font-size: 1rem;
   letter-spacing: 0.5px;
   text-decoration: none; /* Remove underline from link-buttons */
+  text-transform: capitalize; /* Capitalize each word */
 }
 
 .btn-primary {
@@ -231,9 +233,9 @@ body {
 
 /* Hero Section - Centered Elegant Layout */
 .hero {
-  min-height: 70vh; /* Reduced min-height to move content up */
+  min-height: 55vh; /* Moved hero section further up */
   display: flex;
-  align-items: center;
+  align-items: flex-start; /* Align content to the top */
   padding: 0 var(--space-xl);
   padding-top: 80px; /* Account for fixed header */
   background: var(--color-background);
@@ -296,23 +298,70 @@ body {
 .hero-actions {
   width: 100%;
   display: flex;
-  gap: 2rem;
+  flex-direction: column; /* Mobile-first: stack buttons vertically */
+  gap: 1.5rem; /* Spacing for mobile */
   align-items: center;
-  justify-content: space-evenly;
-  flex-wrap: wrap;
+  justify-content: center;
   margin-top: var(--space-xl);
 }
 
+/* New button style */
+.btn.cta-influencer {
+    background-color: #FFFFFF;
+    color: #000000;
+    border: 2px solid #FFFFFF;
+    order: 1; /* Position in mobile */
+    /* Size will be controlled by the grid on desktop */
+}
+
+.btn.cta-influencer:hover {
+    background-color: #000000;
+    border-color: #FFFFFF; /* White border on hover */
+    color: #FFFFFF;
+}
+
+/* Desktop Grid Layout (Quadrilateral Shape) */
+@media (min-width: 769px) {
+    .hero-actions {
+        display: grid;
+        grid-template-columns: 1fr auto 1fr; /* Three columns for alignment */
+        grid-template-rows: auto auto; /* Two rows for the buttons */
+        gap: 1.5rem 2rem; /* Row gap and Column gap */
+        align-items: center; /* Vertical alignment */
+        justify-items: center; /* Horizontal alignment */
+    }
+
+    /* Place buttons in the grid */
+    .cta-influencer { grid-area: 1 / 2 / 2 / 3; } /* Top-center */
+    .cta-main { grid-area: 2 / 2 / 3 / 3; }       /* Bottom-center */
+    .cta-secondary-1 { grid-area: 1 / 1 / 3 / 2; justify-self: end; } /* Middle-left */
+    .cta-secondary-2 { grid-area: 1 / 3 / 3 / 4; justify-self: start; } /* Middle-right */
+
+    /* Ensure the two central buttons have the same size */
+    .cta-influencer,
+    .cta-main {
+        width: 320px; /* Explicit width for consistency */
+        height: 80px; /* Reduced height for desktop */
+        font-size: 1.3rem !important;
+        box-sizing: border-box; /* Include padding in width */
+        display: flex; /* Use flexbox for alignment */
+        justify-content: center; /* Center text horizontally */
+        align-items: center; /* Center text vertically */
+        text-align: center;
+        padding: 0 !important; /* Reset padding to rely on flexbox alignment */
+    }
+}
+
 .cta-main {
-    order: 2;
+    order: 2; /* Position in mobile */
 }
 
 .cta-secondary-1 {
-    order: 1;
+    order: 3; /* Position in mobile */
 }
 
 .cta-secondary-2 {
-    order: 3;
+    order: 4; /* Position in mobile */
 }
 
 .hero-visual {
