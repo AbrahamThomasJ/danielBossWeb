@@ -195,6 +195,20 @@ body {
   box-shadow: 0 10px 20px rgba(255, 255, 255, 0.15);
 }
 
+/* Base style for the main hero CTA (Mobile First) */
+.btn.btn-principal {
+  padding: 16px 32px !important; /* Perfect size for mobile */
+  font-size: 1.05rem !important; /* Perfect size for mobile */
+}
+
+/* Larger size for tablets and desktops */
+@media (min-width: 769px) {
+  .btn.btn-principal {
+    padding: 24px 48px !important; /* Final larger padding for desktop */
+    font-size: 1.3rem !important; /* Final larger font for desktop */
+  }
+}
+
 .btn-primary.large {
   padding: 18px 36px;
   font-size: 1.1rem;
